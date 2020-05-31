@@ -5,7 +5,7 @@ from flask import render_template, request
 @app.route('/')
 @app.route('/index')
 def index():
-    pictures = {
+    projects = {
         "Narrowband IoT Kit" : {
             "image" : "work-1.jpg",
             "category" : "IoT",
@@ -19,6 +19,13 @@ def index():
             "date" : "3 May 2018",
             "url" : "http://ece4012y2018.ece.gatech.edu/spring/sd18sS4/",
             "type" : "website"
+        },
+        "CO2 Near Me":{
+            "image" : "co2.png",
+            "category" : "IoT",
+            "date" : "24 May 2020",
+            "url" : "https://github.com/kevinlwebb/CO2-Near-Me",
+            "type" : "github"
         }
     }
 
@@ -48,4 +55,4 @@ def index():
             "aimage" : "testimonial-2.jpg"
         }
     }
-    return render_template('home.html', pictures = pictures, blogs = blogs)
+    return render_template('home.html', projects = projects, blogs = blogs)
